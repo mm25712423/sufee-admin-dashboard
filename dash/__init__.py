@@ -32,5 +32,13 @@ app.add_url_rule('/', endpoint='index')
 
 app.config['SECRET_KEY'] = 'secret!'
 
+#import dash.msgq
+#zeromq = dash.msgq.ZeroMQ()
+
 if __name__ == '__main__':
-    socketio.run(app, host="0.0.0.0", port=5001, debug=True)
+#    if not zeromq.start(app):
+#            print 'ERROR: ZeroMQ would not start'
+    socketio.run(app, host="0.0.0.0", port=5000, debug=True)
+
+    # stop
+#    zeromq.stop()
